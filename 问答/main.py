@@ -21,7 +21,7 @@ print(data.head())
 automl = AutoML()
 
 automl_settings = {
-    "time_budget": 300,  # 总训练时间为300秒
+    "time_budget": 10,  # 总训练时间为300秒
     "metric": 'accuracy',  # 评估标准为准确度
     "task": 'classification',  # 任务类型为分类
     "log_file_name": "flaml.log",  # 日志文件名
@@ -36,4 +36,7 @@ sample_question_transformed = vectorizer.transform([sample_question])
 predicted_answer_idx = automl.predict(sample_question_transformed)
 predicted_answer = label_encoder.inverse_transform([predicted_answer_idx])[0]
 print("Predicted Answer:", predicted_answer)
+
 dump(automl, 'trained_model.joblib')
+dump(vectorizer, 'tfidf_vectorizer.joblib')
+dump(label_encoder, 'label_encoder.joblib')
