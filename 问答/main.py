@@ -21,7 +21,7 @@ print(data.head())
 automl = AutoML()
 
 automl_settings = {
-    "time_budget": 10,  # 总训练时间为300秒
+    "time_budget": 300,  # 总训练时间为300秒
     "metric": 'accuracy',  # 评估标准为准确度
     "task": 'classification',  # 任务类型为分类
     "log_file_name": "flaml.log",  # 日志文件名

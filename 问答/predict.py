@@ -8,7 +8,7 @@ label_encoder = load('label_encoder.joblib')
 vectorizer = load('tfidf_vectorizer.joblib')
 
 # 使用加载的模型进行预测
-sample_question = "Python是什么"
+sample_question = "什么是人工智能？"
 
 sample_question_transformed = vectorizer.transform([sample_question])
 predicted_answer_idx = model.predict(sample_question_transformed)
